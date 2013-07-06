@@ -162,7 +162,8 @@
 						cdpos = 0;
 					}
 					$('div:eq(' + n + ')', g.cDrag).css({
-						'left': (!(browser.mozilla) ? cdpos - cdcounter : cdpos) + 'px'
+//						'left': (!(browser.mozilla) ? cdpos - cdcounter : cdpos) + 'px'
+						'left': cdpos + 'px'
 					}).show();
 					cdleft = cdpos;
 					cdcounter++;
