@@ -193,6 +193,7 @@
 			},
 			dragStart: function (dragtype, e, obj) { //default drag function start
                 if (dragtype == 'colresize' && p.colResize === true) {//column resize
+                	e.preventDefault();
 					$(g.nDiv).hide();
 					$(g.nBtn).hide();
 					var n = $('div', this.cDrag).index(obj);
@@ -207,6 +208,7 @@
 					};
 					$('body').css('cursor', 'col-resize');
 				} else if (dragtype == 'vresize') {//table resize
+					e.preventDefault();
 					var hgo = false;
 					$('body').css('cursor', 'row-resize');
 					if (obj) {
@@ -221,6 +223,7 @@
 						hgo: hgo
 					};
 				} else if (dragtype == 'colMove') {//column header drag
+					e.preventDefault();
                     $(e.target).disableSelection(); //disable selecting the column header
                     if((p.colMove === true)) {
                         $(g.nDiv).hide();
