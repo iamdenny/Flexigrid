@@ -1545,7 +1545,12 @@
 			});
 		}
 	}; //end noSelect
-  $.fn.flexSearch = function(p) { // function to search grid
-	return this.each( function() { if (this.grid&&this.p.searchitems) this.grid.doSearch(); });
-  }; //end flexSearch
+	$.fn.flexSearch = function(p) { // function to search grid
+		return this.each( function() { if (this.grid&&this.p.searchitems) this.grid.doSearch(); });
+	}; //end flexSearch
+	$.fn.flexHeight = function(p){
+		return this.each(function () {
+			if (this.grid && this.p.url) this.grid.fixHeight();
+		});
+	}; // end flexHeight
 })(jQuery);
