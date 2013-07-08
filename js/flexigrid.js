@@ -729,7 +729,7 @@
 							this.className = 'sorted';
 						}
 						$(tdDiv).css({
-							textAlign: pth.align,
+							textAlign: this.align ? this.align : pth.align,
 							width: $('div:first', pth)[0].style.width
 						});
 						if (pth.hidden) {
