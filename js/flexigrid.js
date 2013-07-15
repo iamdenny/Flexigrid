@@ -790,7 +790,7 @@
 						$(this).siblings().removeClass('trSelected');
 					}
 					if (p.onClick) {
-						p.onClick(this, g, p);
+						p.onClick(this, g, p, $(this).hasClass('trSelected'));
 					}
 				}).on('mousedown', function (e) {
 					if (e.shiftKey) {
