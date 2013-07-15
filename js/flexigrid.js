@@ -77,6 +77,7 @@
 			width: 'auto', //auto width
 			striped: true, //apply odd even stripes
 			novstripe: false,
+			singleSelect : false,
 			minwidth: 30, //min width of columns
 			minheight: 80, //min height of columns
 			resizable: true, //allow table resizing
@@ -113,6 +114,7 @@
 			onDragCol: false,
 			onToggleCol: false,
 			onChangeSort: false,
+			onClick : false,
 			onDoubleClick: false,
 			onSuccess: false,
 			onError: false,
@@ -786,6 +788,9 @@
 					$(this).toggleClass('trSelected');
 					if (p.singleSelect && ! g.multisel) {
 						$(this).siblings().removeClass('trSelected');
+					}
+					if (p.onClick) {
+						p.onClick(this, g, p);
 					}
 				}).on('mousedown', function (e) {
 					if (e.shiftKey) {
